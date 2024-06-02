@@ -60,6 +60,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .RequireAuthorization("FunkyAuthPolicy");
 
+// https://localhost:7170/Account/login?returnurl=/home
+
 app.MapGet("/Account/Login", async (HttpContext ctx, string returnUrl) =>
 {
     // allow sign in so we can actually run the policy
